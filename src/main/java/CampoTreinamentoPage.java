@@ -1,14 +1,14 @@
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+
+import br.ce.mgomes.core.DSL;
 
 public class CampoTreinamentoPage {
 	
 	private DSL dsl;
 	
 	
-	
-	public CampoTreinamentoPage(WebDriver driver) {
-		dsl = new DSL(driver);
+	public CampoTreinamentoPage() {
+		dsl = new DSL();
 	}
 
 

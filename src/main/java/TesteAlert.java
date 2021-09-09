@@ -1,34 +1,33 @@
+import static br.ce.mgomes.core.DriverFactory.getDriver;
+import static br.ce.mgomes.core.DriverFactory.killDriver;
+
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 import org.openqa.selenium.Alert;
-import org.openqa.selenium.Dimension;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
+
+import br.ce.mgomes.core.DSL;
 
 public class TesteAlert {
 	
-	private WebDriver driver;
 	private DSL dsl;
 	
 	@Before
 	public void inicializa() {
-		driver = new ChromeDriver();
-		driver.manage().window().setSize(new Dimension(1200, 765));
-		driver.get("file:///" + System.getProperty("user.dir") + "/src/main/resources/componentes.html");
-		dsl = new DSL(driver);
+		getDriver().get("file:///" + System.getProperty("user.dir") + "/src/main/resources/componentes.html");
+		dsl = new DSL();
 	}
 	
 	@After
 	public void termina() {
-		driver.quit();
+		killDriver();;
 	}
 	
 	@Test
 	public void deveInteragirComAlertSimples() {
 		dsl.clicaBotao("alert");
-		Alert alert = driver.switchTo().alert();
+		Alert alert = getDriver().switchTo().alert();
 		String texto = alert.getText();
 		Assert.assertEquals("Alert Simples", texto);
 		alert.accept(); 
