@@ -1,3 +1,4 @@
+package br.ce.mgomes.test;
 import static br.ce.mgomes.core.DriverFactory.getDriver;
 import static br.ce.mgomes.core.DriverFactory.killDriver;
 import static org.junit.Assert.assertEquals;

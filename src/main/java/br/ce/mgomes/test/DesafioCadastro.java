@@ -1,12 +1,14 @@
+package br.ce.mgomes.test;
 import static br.ce.mgomes.core.DriverFactory.getDriver;
-import static br.ce.mgomes.core.DriverFactory.killDriver;
 
-import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-public class DesafioCadastro {
+import br.ce.mgomes.core.BaseTest;
+import br.ce.mgomes.page.CampoTreinamentoPage;
+
+public class DesafioCadastro  extends BaseTest{
 	
 	private CampoTreinamentoPage page;
 	
@@ -17,10 +19,6 @@ public class DesafioCadastro {
 		page = new CampoTreinamentoPage();
 	}
 	
-	@After
-	public void termina() {
-		killDriver();
-	}
 	
 	@Test
 	public void deveInteragirComCadastro() {

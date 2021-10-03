@@ -1,17 +1,9 @@
+package br.ce.mgomes.page;
 import org.openqa.selenium.By;
 
-import br.ce.mgomes.core.DSL;
+import br.ce.mgomes.core.BasePage;
 
-public class CampoTreinamentoPage {
-	
-	private DSL dsl;
-	
-	
-	public CampoTreinamentoPage() {
-		dsl = new DSL();
-	}
-
-
+public class CampoTreinamentoPage extends BasePage {
 
 	public void setNome(String nome) {
 		dsl.escreve("elementosForm:nome", nome);
